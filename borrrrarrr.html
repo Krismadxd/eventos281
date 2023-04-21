@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositorio de Eventos</title>
+  <!-- Enlace a Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Repositorio de Eventos</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Eventos</h2>
+        <ul class="list-group" id="eventosList">
+          <!-- Listado de eventos -->
+          <li class="list-group-item" data-evento="evento1">Evento 1</li>
+          <li class="list-group-item" data-evento="evento2">Evento 2</li>
+          <li class="list-group-item" data-evento="evento3">Evento 3</li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <h2>Materiales del Evento</h2>
+        <div id="materialesContainer">
+          <!-- Contenedor de materiales del evento seleccionado -->
+          <p>Seleccione un evento para ver los materiales disponibles.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Buscar por Código de Evento</h2>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="buscarCodigo" placeholder="Ingrese el código del evento">
+          <div class="input-group-append">
+            <button class="btn btn-primary" id="btnBuscarCodigo" type="button">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </body>
+ </html>
+    
+    
