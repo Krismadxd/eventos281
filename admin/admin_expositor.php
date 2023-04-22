@@ -185,7 +185,7 @@
         <br>
         <div class="table-responsive">
           <?php
-          include("con_db.php");
+          include("../configs/con_db.php");
 
           // Ejecutamos la consulta SQL
           $resultado1 = $conn->query("SELECT * FROM persona p,expositor e WHERE p.ci =e.ci ORDER BY e.ci");

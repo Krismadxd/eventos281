@@ -1,10 +1,5 @@
 <?php
-// Recuperamos los datos del formulario
-
-include("con_db.php");
-
-
-
+include("../configs/con_db.php");
 
 $accion = $_POST['accion'];
 print_r($_POST);
