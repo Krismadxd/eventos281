@@ -1,13 +1,13 @@
 <?php
-// Recuperamos los datos del formulario
-
-include("con_db.php");
-
-
-
+include("../configs/con_db.php");
 
 $accion = $_POST['accion'];
+
+echo "Admin expositor ";
+echo "<pre>";
 print_r($_POST);
+echo "</pre>";
+exit();
 if ($accion != '') {
     switch ($accion) {
         case 'agregar':
@@ -71,6 +71,7 @@ if ($accion != '') {
 
             break;
     }
+    header('Location: admin_expositor.php');
 } else {
     echo "algo salio mal";
 }

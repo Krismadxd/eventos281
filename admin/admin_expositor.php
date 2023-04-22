@@ -13,8 +13,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CJosefin+Sans:400,700,300italic">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
   <style>
     .ie-panel {
       display: none;
@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
+  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
   </div>
   <!-- Page Loader-->
   <div id="page-loader">
@@ -185,7 +185,7 @@
         <br>
         <div class="table-responsive">
           <?php
-          include("con_db.php");
+          include("../configs/con_db.php");
 
           // Ejecutamos la consulta SQL
           $resultado1 = $conn->query("SELECT * FROM persona p,expositor e WHERE p.ci =e.ci ORDER BY e.ci");
@@ -241,13 +241,10 @@
                     <td><?php echo $fila1['correo']; ?></td>
                     <td><?php echo $fila1['telefono']; ?></td>
                     <td>
-                      <a href="admin_expositor_read.php" value="<?php echo $fila1['ci'];   ?>"value="seleccionar" name="accion">seleccionar2</a>
-
-                    <!-- <form action="admin_expositor_read.php" method="post">
-                        <input type="header" name="ci" id="ci" value="<?php echo $fila1['ci'];   ?>" />
-                        <input type="submit" value="seleccionar" name="accion">
-                        
-                      </form>-->
+                    <form action="admin_expositor_read.php" method="post">
+                        <input type="hidden" name="ci" id="ci" value="<?php echo $fila1['ci'];   ?>" />
+                        <input type="submit" value="seleccionar" name="accion" class="btn btn-success">
+                      </form>
                     </td>
                   </tr>
                 <?php } ?>
@@ -321,8 +318,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-  <script src="js/core.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/core.min.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>
