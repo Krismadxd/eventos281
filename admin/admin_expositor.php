@@ -225,6 +225,7 @@
                 <th scope="col">Correo</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Acciones</th>
+                
               </thead>
               <tbody>
                 <?php while ($fila1 = $resultado1->fetch_array()) {
