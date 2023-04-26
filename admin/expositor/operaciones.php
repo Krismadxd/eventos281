@@ -2,12 +2,6 @@
 include("../configs/con_db.php");
 
 $accion = $_POST['accion'];
-
-echo "Admin expositor ";
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-exit();
 if ($accion != '') {
     switch ($accion) {
         case 'agregar':
@@ -32,13 +26,23 @@ if ($accion != '') {
             $consulta = $conn->query($sql);
             break;
         case 'editar':
-            $sql = "UPDATE usuario u, persona p SET u.nombre_usuario='$username',u.contrasena='$password' WHERE p.ci=$ci";
-            echo $sql; //mysqli_query($conexion, $sql);
-            $cod_usuario = mysqli_insert_id($conn);
-            $sql = "UPDATE persona SET ci=$ci, nombre='$nombre', apaterno='$apaterno', amaterno='$amaterno', sexo='$sexo', fecha_nac='$fecha_nac', direccion='$direccion', correo='$correo', telefono='$telefono' cod_usuario=$cod_usuario WHERE ci='$ci'";
-            echo $sql; // mysqli_query($conexion, $sql);
-            $sql = "UPDATE expositor e, persona p SET ci=$ci,cod_usuario=$cod_usuario";
-            echo $sql; // mysqli_query($conexion, $sql);
+            $ci = $_POST['ci'];
+            $nombre = $_POST['nombre'];
+            $apaterno = $_POST['apaterno'];
+            $amaterno = $_POST['amaterno'];
+            $sexo = $_POST['sexo'];
+            $fecha_nac = $_POST['fecha_nac'];
+            $direccion = $_POST['direccion'];
+            $correo = $_POST['correo'];
+            $telefono = $_POST['telefono'];
+
+            $sql = "UPDATE persona SET nombre='$nombre', apaterno='$apaterno', amaterno='$amaterno', sexo='$sexo', fecha_nac='$fecha_nac', direccion='$direccion', correo='$correo', telefono='$telefono' WHERE ci='$ci'";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "Los datos de la persona han sido actualizados exitosamente.";
+            } else {
+                echo "Error al actualizar los datos de la persona: " . mysqli_error($conn);
+            }
             break;
         case 'borrar':
             $sql = "DELETE FROM expositor WHERE ci = '$ci'";

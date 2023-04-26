@@ -13,30 +13,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CJosefin+Sans:400,700,300italic">
-  <link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .ie-panel {
-      display: none;
-      background: #212121;
-      padding: 10px 0;
-      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-      clear: both;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    html.ie-10 .ie-panel,
-    html.lt-ie-10 .ie-panel {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="../template/css/bootstrap.css">
+  <link rel="stylesheet" href="../template/css/style.css">
 </head>
 
 <body>
-  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
-  </div>
   <!-- Page Loader-->
   <div id="page-loader">
     <div class="page-loader-body">
@@ -62,63 +43,9 @@
   </div>
   <!-- Page-->
   <div class="page">
-
-    <header class="section page-header">
-      <!-- RD Navbar-->
-      <div class="rd-navbar-wrap">
-        <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-md-stick-up-offset="5px" data-lg-stick-up-offset="5px" data-md-stick-up="true" data-lg-stick-up="true">
-          <div class="rd-navbar-main-outer">
-            <div class="rd-navbar-main">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel">
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand" href="index.html">
-                    <div class="brand__name"><img class="brand__logo-dark" src="images/logores.png" alt="" width="237" height="35" /><img class="brand__logo-light" src="images/logo-inverse-237x35.png" alt="" width="237" height="35" />
-                    </div><span class="brand__slogan">Sistema Eventos Academicos</span>
-                  </a></div>
-              </div>
-              <!-- RD Navbar Nav-->
-              <div class="rd-navbar-nav-wrap">
-
-                <!-- RD Navbar Nav-->
-                <ul class="rd-navbar-nav">
-                  <li><a href="admin_web.html">Pagina<span></span><span></span><span></span><span></span></a>
-                  </li>
-                  <li class="active"><a type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                      Usuario<span></span><span></span><span></span><span></span></a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <li><a class="dropdown-item" type="button" href="admin_usuarios.html">Administradores</a></li>
-                      <li><a class="dropdown-item" type="button" href="admin_control.html">Controles</a></li>
-                      <li><a class="dropdown-item" type="button" href="admin_expositor.html">Expositores</a></li>
-                      <li><a class="dropdown-item" type="button" href="admin_participante.html">Participantes</a></li>
-                    </ul>
-                  </li>
-                  <li><a type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                      Eventos<span></span><span></span><span></span><span></span></a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <li><a class="dropdown-item" type="button" href="admin_eventos.html">Conferencias</a></li>
-                      <li><a class="dropdown-item" type="button" href="evento_tutorial.html">Tutoriales</a></li>
-                      <li><a class="dropdown-item" type="button" href="evento_charla.html">Charlas</a></li>
-                      <li><a class="dropdown-item" type="button" href="evento_mesa.html">Mesas Redondas</a></li>
-                      <li><a class="dropdown-item" type="button" href="evento_inves.html">Investigacion</a></li>
-                      <li><a class="dropdown-item" type="button" href="evento_proy.html">Proyectos</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="admin_acceso.html">Acceso<span></span><span></span><span></span><span></span></a>
-                  </li>
-                  <li><a href="inicio_sesion.html"><img class="brand__logo-dark" src="images/ikons.jpg" alt="" width="30" height="28" /><span></span><span></span><span></span><span></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-
+    <?php 
+    include("../template/header.php");
+    ?>
     <section class="section  bg-gray-lighter text-center">
 
       <div class="col-md-3 ">
@@ -135,9 +62,6 @@
               <div class="mb-3">
                 <!--<label for="userbane" class="form-label">Nombre de usuario</label>-->
                 <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Nombre de usuario">
-              </div>
-              <div class="mb-3">
-                <input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="password">
               </div>
               <div class="mb-3">
                 <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre">
@@ -225,7 +149,7 @@
                 <th scope="col">Correo</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Acciones</th>
-                
+
               </thead>
               <tbody>
                 <?php while ($fila1 = $resultado1->fetch_array()) {
@@ -242,9 +166,9 @@
                     <td><?php echo $fila1['correo']; ?></td>
                     <td><?php echo $fila1['telefono']; ?></td>
                     <td>
-                    <form action="admin_expositor_read.php" method="post">
+                      <form action="editar.php" method="post">
                         <input type="hidden" name="ci" id="ci" value="<?php echo $fila1['ci'];   ?>" />
-                        <input type="submit" value="seleccionar" name="accion" class="btn btn-success">
+                        <input type="submit" value="Editar" name="accion" class="btn btn-success">
                       </form>
                     </td>
                   </tr>
@@ -262,54 +186,10 @@
       <br><br><br><br>
     </section>
 
+    <?php 
+    include("../template/footer.php");
+    ?>
 
-
-
-
-
-
-
-
-    <!-- Page Footer -->
-    <footer class="footer-centered section bg-gray-darker">
-      <div class="shell">
-        <div class="range range-sm-center">
-          <div class="cell-sm-10 cell-md-8 cell-lg-6">
-            <!-- Brand--><a class="brand" href="index.html">
-              <div class="brand__name"><img src="images/calendario.png" alt="" width="35" height="35" />
-              </div><span class="brand__slogan">Sistema Eventos Academicos</span>
-            </a>
-            <!-- RD Mailform-->
-            <form class="rd-mailform form_inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-              <div class="form__inner">
-                <!--<div class="form-wrap">
-                          <input class="form-input" id="subscribe-form-footer-email" type="email" name="email" data-constraints="@Email @Required">
-                          <label class="form-label" for="subscribe-form-footer-email">Your E-mail...</label>
-                        </div>-->
-                <div class="form-button">
-                  <button class="button button-link" type="submit">Quienes Somos</button>
-                </div>
-                <div class="form-button">
-                  <button class="button button-link" type="submit">Preguntas frecuentes</button>
-                </div>
-                <div class="form-button">
-                  <button class="button button-link" type="submit">Contactos</button>
-                </div>
-
-              </div>
-            </form>
-            <ul class="list-icons list-inline-sm">
-              <li><a class="icon icon-sm fa fa-instagram icon-style-camera" href="#"><span></span><span></span><span></span><span></span></a></li>
-              <li><a class="icon icon-sm fa fa-facebook icon-style-camera" href="#"><span></span><span></span><span></span><span></span></a></li>
-              <li><a class="icon icon-sm fa fa-pinterest icon-style-camera" href="#"><span></span><span></span><span></span><span></span></a></li>
-            </ul>
-            <!-- Rights-->
-            <p class="rights"><span>CN Eventos</span><span>&nbsp;&copy;&nbsp; </span><span class="copyright-year"></span>.&nbsp; <br class="veil-xs"><a class="link-underline" href="#">Privacy
-                Policy</a></p>
-          </div>
-        </div>
-      </div>
-    </footer>
 
 
   </div>
@@ -319,8 +199,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-  <script src="../js/core.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="../template/js/core.min.js"></script>
+  <script src="../template/js/script.js"></script>
 </body>
 
 </html>
